@@ -4,16 +4,19 @@
 ## 编译 xcache
 ### Ubuntu + php5.6：
 ```
-$ sudo apt-get install python-software-properties
-$ sudo add-apt-repository ppa:ondrej/php
-$ sudo apt-get update
-$ apt-get install php5.6-dev
-$ git clone https://github.com/lighttpd/xcache
-$ cd xcache
-$ patch -p1 < ../xcache.patch
-$ phpize
-$ ./configure --enable-xcache-disassembler
-$ make
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+apt-get install php5.6-dev
+git clone https://github.com/lighttpd/xcache
+cd xcache
+patch -p1 < ../xcache.patch
+phpize
+./configure --enable-xcache-disassembler
+make
+make install
+cp xcache.ini 
+php -v
 ```
 [编译参考](https://github.com/lighttpd/xcache/blob/master/INSTALL)
 
